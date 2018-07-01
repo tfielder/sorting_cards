@@ -13,14 +13,27 @@ class RoundClassTest < Minitest::Test
     assert_instance_of
   end
 
-  def test_
+  def test_for_returning_deck
     skip
     assert_equal
   end
 
-  def test_
+  def test_for_returning_guesses
     skip
     assert_equal
+  end
+
+  def test_for_returning_current_card
+    skip
+    assert_equal
+  end
+
+  def test_for_returning_record_guess
+
+  end
+
+  def test_for_returning_count
+
   end
 
 end
