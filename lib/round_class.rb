@@ -28,6 +28,7 @@ class Round
 
   def record_guess(guess)
     @guesses.unshift(guess)
+    @guess_count += 1
   end
 
   def first
