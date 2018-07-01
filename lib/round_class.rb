@@ -27,8 +27,8 @@ class Round
   end
 
   def current_card
-    #? What should this do?
-    @deck.index[current_card]  #check functionality
+    deck = @deck
+    deck.index(@current_card)
   end
 
   def record_guess(guess)
