@@ -8,12 +8,14 @@ class Round
   attr_accessor :guesses
   attr_accessor :guess_count
   attr_accessor :current_card
+  attr_accessor :number_correct
 
   def initialize(deck)
     @deck = deck
     @guesses = []
     @guess_count = 0
     @current_card = 1
+    @number_correct = 0
   end
 
   def deck
@@ -48,7 +50,7 @@ class Round
   end
 
   def percent_correct
-    #something / @guess_count
+    (@number_correct / @guess_count) * 100
   end
 
 end
