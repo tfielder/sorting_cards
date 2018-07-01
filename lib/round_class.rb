@@ -4,15 +4,33 @@ require ".lib/deck_class.rb"
 
 class Round
 
-def initialize()
+attr_accessor :deck
+
+def initialize(deck)
+  @deck = deck
+end
+
+def deck
+  @deck
+end
+
+def #guesses
 
 end
 
-def
+def #current_card
+#should return the current card
+end
+
+def record_guess
 
 end
 
-def
+def #count
+
+end
+
+def #feedback
 
 end
 
