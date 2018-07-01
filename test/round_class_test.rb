@@ -28,12 +28,26 @@ class RoundClassTest < Minitest::Test
     assert_equal
   end
 
-  def test_for_returning_record_guess
-
+  def test_for_adding_record_guess
+    skip
   end
 
   def test_for_returning_count
+    skip
+  end
 
+  def test_for_returning_first
+    skip
+  end
+
+  def test_for_returning_last_guess
+    skip
+  end
+
+  def test_for_returning_number_correct
+  end
+
+  def test_for_returning_percent_correct
   end
 
 end
