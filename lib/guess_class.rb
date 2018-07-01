@@ -10,6 +10,10 @@ class Guess
     @response
   end
 
+  def card
+    @card
+  end
+
   def correct?
     card_description = "#{@card.value} of #{@card.suit}"
     if card_description == @response

@@ -19,6 +19,13 @@ class GuessClassTest < Minitest::Test
     assert_equal "Queen of Clubs", guess_example.response
   end
 
+  def test_returns_card
+    card_example = Card.new("Queen","Clubs")
+    response = "Queen of Clubs"
+    guess_example = Guess.new(response, card_example)
+    assert_equal card_example, guess_example.card
+  end
+
   def test_correct?
     card_example = Card.new("Queen","Clubs")
     response = "Queen of Clubs"
