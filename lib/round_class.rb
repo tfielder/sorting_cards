@@ -32,6 +32,7 @@ class Round
   end
 
   def record_guess(guess)
+    #this may not be doing what it is supposed to.  Is the guess . . .
     @guesses.unshift(guess)
     @guess_count += 1
     @current_card += 1
@@ -46,7 +47,7 @@ class Round
   end
 
   def number_correct
-    #should tell you how many you got right?
+    @number_correct
   end
 
   def percent_correct
