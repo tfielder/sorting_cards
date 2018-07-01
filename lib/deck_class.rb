@@ -3,9 +3,18 @@ require "./lib/guess_class.rb"
 
 class Deck
 
-def initialize(card_1, card_2, card_3)
+attr_accessor :cards
 
+def initialize(array_of_cards)
+  @cards = array_of_cards
 end
 
+def cards
+  @cards
+end
+
+def count
+  number_of_cards = @cards.count
+end
 
 end
