@@ -7,11 +7,13 @@ class Round
   attr_accessor :deck
   attr_accessor :guesses
   attr_accessor :guess_count
+  attr_accessor :current_card
 
   def initialize(deck)
     @deck = deck
     @guesses = []
     @guess_count = 0
+    @current_card = 1
   end
 
   def deck
@@ -24,11 +26,13 @@ class Round
 
   def current_card
     #? What should this do?
+    @deck.index[current_card]  #check functionality
   end
 
   def record_guess(guess)
     @guesses.unshift(guess)
     @guess_count += 1
+    @current_card += 1
   end
 
   def first
