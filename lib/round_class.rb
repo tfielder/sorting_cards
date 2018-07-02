@@ -2,6 +2,7 @@ require "./lib/card_class.rb"
 require "./lib/guess_class.rb"
 require "./lib/deck_class.rb"
 
+
 class Round
 
   attr_accessor :deck
@@ -13,8 +14,7 @@ class Round
   def initialize(deck)
     @deck = deck
     @guesses = []
-    @guess_count = 0
-    @current_card = 1
+    @current_card = 0
     @number_correct = 0
   end
 
@@ -27,15 +27,14 @@ class Round
   end
 
   def current_card
-    deck = @deck
-    deck.index(@current_card)
+    @deck.cards[@current_card]
   end
 
   def record_guess(guess)
-    #this may not be doing what it is supposed to.  Is the guess . . .
-    @guesses.unshift(guess)
-    @guess_count += 1
-    @current_card += 1
+    guess_card = Card.new(guess["value"], guess["suit"])
+    guesstimation = Guess.new("#{guess_card.value} of #{guess_card.suit}", guess_card)
+    @guesses.unshift(guesstimation)
+    guesstimation
   end
 
   def first
@@ -51,7 +50,7 @@ class Round
   end
 
   def percent_correct
-    (@number_correct / @guess_count) * 100
+    (@number_correct / @guesses.count) * 100
   end
 
 end
