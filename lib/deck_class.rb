@@ -17,4 +17,12 @@ def count
   number_of_cards = @cards.count
 end
 
+def sort
+    #take the deck
+    #define values
+    #sort the deck by value
+    #sort the deck by suit
+    #return the deck in an array
+end
+
 end
