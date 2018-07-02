@@ -19,8 +19,14 @@ end
 
 def sort
     #take the deck
+    @cards
     #define values
+    royalty = {"Jack" = "11", "Queen" = "12", "King" = "13", "Ace" = "14"}
     #sort the deck by value
+    @cards.map each do |card|
+      #compare value of card before to card
+      #return index of card unless nil
+    end
     #sort the deck by suit
     #return the deck in an array
 end
