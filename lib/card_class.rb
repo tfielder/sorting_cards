@@ -16,6 +16,4 @@ def value
   @value
 end
 
-
-
 end
