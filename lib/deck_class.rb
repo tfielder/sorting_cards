@@ -47,7 +47,7 @@ def change_deck_to_numerical_values
     #binding.pry
     value = card_values[(card.value)]
     suit = suit_values[(card.suit)]
-    binding.pry
+    #binding.pry
     #puts "Your card #{value} and #{suit}"
     card = [value, suit]
     #binding.pry
