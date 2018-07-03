@@ -1,5 +1,6 @@
 require "./lib/card_class.rb"
 require "./lib/guess_class.rb"
+require "pry"
 
 class Deck
 
@@ -45,6 +46,7 @@ def change_deck_to_numerical_values
   @cards.map do |card|
     value = card_values[(card.value)]
     suit = suit_values[(card.suit)]
+    pry.binding
     puts "Your card #{value} and #{suit}"
     card = [value, suit]
   end
