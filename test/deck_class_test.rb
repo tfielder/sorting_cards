@@ -37,9 +37,9 @@ class DeckClassTest < Minitest::Test
     card_3 = Card.new("5", "Diamonds")
     deck_example = Deck.new([card_1, card_2, card_3])
     new_deck = deck_example.change_deck_to_numerical_values
-    assert_equal card_1.value, new_deck[0][0].value
-    assert_equal card_2.value, new_deck[1][0].value
-    assert_equal card_3.value, new_deck[2][0].value
+    assert_equal card_1.value, new_deck.cards[0].value
+    assert_equal card_2.value, new_deck.cards[1].value
+    assert_equal card_3.value, new_deck.cards[2].value
   end
 
   def test_change_deck_to_face_values

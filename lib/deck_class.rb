@@ -20,31 +20,32 @@ end
 def change_deck_to_numerical_values
   #mutates the deck of cards to numerical values
   card_values = {
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
-    "8": 8
-    "9": 9
-    "10": 10
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "10": 10,
     "Jack": 11,
     "Queen": 12,
     "King": 13,
-    "Ace": 14}
+    "Ace": 14
+  }
 
     suit_values = {
-    "Clubs": 1
-    "Diamonds": 2
-    "Hearts": 3
+    "Clubs": 1,
+    "Diamonds": 2,
+    "Hearts": 3,
     "Spades": 4
-    }
+  }
 
   @cards.map do |card|
-    value = card_values.key(card.value)
-    suit = suit_values.key(card.suit)
-    puts "Your card #{value} : #{suit}"
+    value = card_values[(card.value)]
+    suit = suit_values[(card.suit)]
+    puts "Your card #{value} and #{suit}"
     card = [value, suit]
   end
 
@@ -59,28 +60,27 @@ end
 def sort
     #define values
     card_values = {
-      "2": 2
-      "3": 3
-      "4": 4
-      "5": 5
-      "6": 6
-      "7": 7
-      "8": 8
-      "9": 9
-      "10": 10
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10,
       "Jack": 11,
       "Queen": 12,
       "King": 13,
-      "Ace": 14}
+      "Ace": 14
+    }
 
       suit_values = {
-      "Clubs": 1
-      "Diamonds": 2
-      "Hearts": 3
+      "Clubs": 1,
+      "Diamonds": 2,
+      "Hearts": 3,
       "Spades": 4
-      }
-
-
+    }
 
     sorted_array = []
     #sort the deck by value for each card
