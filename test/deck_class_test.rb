@@ -44,6 +44,14 @@ class DeckClassTest < Minitest::Test
 
   def test_change_deck_to_face_values
     skip
+    card_1 = [3,3]
+    card_2 = [4,1]
+    card_3 = [5,2]
+    deck_example = Deck.new([card_1, card_2, card_3])
+    new_deck = deck_example.change_deck_to_face_values
+    #assert_equal "3","Hearts", new_deck[0].value
+    #assert_equal "4", "Clubs", new_deck[1].value
+    #assert_equal "5", "Diamonds", new_deck[2].value
   end
 
   def test_sort_works
