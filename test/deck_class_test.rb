@@ -3,6 +3,7 @@ require "./lib/guess_class.rb"
 require "./lib/deck_class.rb"
 require "minitest/autorun"
 require "minitest/pride"
+require "pry"
 
 class DeckClassTest < Minitest::Test
 
@@ -31,15 +32,19 @@ class DeckClassTest < Minitest::Test
   end
 
   def test_change_deck_to_numerical_values
-    
+
     card_1 = Card.new("3","Hearts")
     card_2 = Card.new("4", "Clubs")
     card_3 = Card.new("5", "Diamonds")
     deck_example = Deck.new([card_1, card_2, card_3])
-    new_deck = deck_example.change_deck_to_numerical_values
-    #assert_equal card_1.value.to_i, new_deck.cards.at_[0].value
-    #assert_equal card_2.value.to_i, new_deck.cards.at_[1].value
-    #assert_equal card_3.value.to_i, new_deck.cards.at_[2].value
+    deck_example.change_deck_to_numerical_values
+    #actual = deck_example.cards[0].value
+    #binding.pry
+    #assert_equal card_1.value.to_i, actual
+    #check to see if string or integer
+    assert_equal card_1.value, deck_example.cards[0].value
+    assert_equal card_2.value, deck_example.cards[1].value
+    assert_equal card_3.value, deck_example.cards[2].value
   end
 
   def test_change_deck_to_face_values
@@ -48,8 +53,8 @@ class DeckClassTest < Minitest::Test
     card_2 = [4,1]
     card_3 = [5,2]
     deck_example = Deck.new([card_1, card_2, card_3])
-    new_deck = deck_example.change_deck_to_face_values
-    #assert_equal "3","Hearts", new_deck[0].value
+    deck_example.change_deck_to_face_values
+    assert_equal "3","Hearts", deck_example[0].value
     #assert_equal "4", "Clubs", new_deck[1].value
     #assert_equal "5", "Diamonds", new_deck[2].value
   end
