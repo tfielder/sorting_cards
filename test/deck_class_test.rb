@@ -30,6 +30,14 @@ class DeckClassTest < Minitest::Test
     assert_equal 3, deck_example.count
   end
 
+  def test_change_deck_to_numerical_values
+    skip
+  end
+
+  def test_change_deck_to_face_values
+    skip
+  end
+
   def test_sort_works
     skip
     card_1 = Card.new("4","Hearts")
