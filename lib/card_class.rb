@@ -31,7 +31,6 @@ class Card
     "Spades" => 4
     }
   @translated_suit = suit_values[@suit]
-  binding.pry
   end
 
   def translate_value
