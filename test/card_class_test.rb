@@ -21,4 +21,13 @@ class CardClassTest < Minitest::Test
     assert_equal "5", value
   end
 
+  def test_translate_value
+    card_example = Card.new("5","hearts")
+    value = card_example.translated_value
+    assert_equal 5, value
+  end
+
+  def test_translate_suit
+    skip
+  end
 end
