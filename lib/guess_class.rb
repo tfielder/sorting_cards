@@ -1,17 +1,11 @@
 require "./lib/card_class.rb"
 
 class Guess
+  attr_accessor :response, :card
+
   def initialize(response, card)
     @response = response
     @card = card
-  end
-
-  def response
-    @response
-  end
-
-  def card
-    @card
   end
 
   def correct?

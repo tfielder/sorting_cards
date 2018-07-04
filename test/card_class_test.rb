@@ -10,15 +10,26 @@ class CardClassTest < Minitest::Test
   end
 
   def test_class_gives_suit
-    card_example = Card.new("5","hearts")
+    card_example = Card.new("5","Hearts")
     suit = card_example.suit
-    assert_equal "hearts", suit
+    assert_equal "Hearts", suit
   end
 
   def test_class_gives_value
-    card_example = Card.new("5","hearts")
+    card_example = Card.new("5","Hearts")
     value = card_example.value
     assert_equal "5", value
   end
 
+  def test_translate_value
+    card_example = Card.new("5","Hearts")
+    value = card_example.translated_value
+    assert_equal 5, value
+  end
+
+  def test_translate_suit
+    card_example = Card.new("5","Hearts")
+    suit = card_example.translated_suit
+    assert_equal 3, suit
+  end
 end
