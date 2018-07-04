@@ -49,15 +49,24 @@ class DeckClassTest < Minitest::Test
   end
 
   def test_sort_works
-    
     card_1 = Card.new("4","Hearts")
     card_2 = Card.new("Jack", "Clubs")
     card_3 = Card.new("5", "Diamonds")
     card_4 = Card.new("Ace", "Spades")
     card_5 = Card.new("Ace", "Diamonds")
     deck = Deck.new([card_1, card_2, card_3, card_4, card_5])
-    sorted = deck.sort
-    assert_equal [card_1.value, card_3.value, card_2.value, card_5.value, card_4.value], 2# needs to get the values from sorted
+    deck.sort
+    assert_equal card_1.value, deck.cards[0].value
+    assert_equal card_3.value, deck.cards[1].value
+    assert_equal card_2.value, deck.cards[2].value
+    assert_equal card_5.value, deck.cards[3].value
+    assert_equal card_4.value, deck.cards[4].value
+
+    assert_equal card_1.suit, deck.cards[0].suit
+    assert_equal card_3.suit, deck.cards[1].suit
+    assert_equal card_2.suit, deck.cards[2].suit
+    assert_equal card_5.suit, deck.cards[3].suit
+    assert_equal card_4.suit, deck.cards[4].suit
   end
 
 end
