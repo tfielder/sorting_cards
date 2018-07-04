@@ -31,6 +31,7 @@ def sort_by_value
         end
       end
     end
+    return @cards
 end
 
 def sort_by_suit
@@ -58,6 +59,7 @@ def sort_by_suit
         end
       end
     end
+    return @cards
 end
 
 def sort

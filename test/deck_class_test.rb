@@ -31,24 +31,38 @@ class DeckClassTest < Minitest::Test
     assert_equal 3, deck_example.count
   end
 
-  def test_iterate_by_value
-    skip
+  def test_sort_by_value
     card_1 = Card.new("4","Hearts")
     card_2 = Card.new("Jack", "Clubs")
     card_3 = Card.new("5", "Diamonds")
     card_4 = Card.new("Ace", "Spades")
     card_5 = Card.new("Ace", "Diamonds")
     deck = Deck.new([card_1, card_2, card_3, card_4, card_5])
-    deck.change_deck_to_numerical_values
-    deck.iterate_by_value
-    assert_equal 1, 1 #fix me
+    sorted = deck.sort_by_value
+    assert_equal card_1.value, sorted[0].value
+    assert_equal card_3.value, sorted[1].value
+    assert_equal card_2.value, sorted[2].value
+    assert_equal card_4.value, sorted[3].value
+    assert_equal card_5.value, sorted[4].value
   end
 
-  def test_iterate_by_suit
-    skip
+  def test_sorts_by_suit
+    #Clubs, Diamonds, Hearts, Spades.
+    card_1 = Card.new("4","Hearts")
+    card_2 = Card.new("Jack", "Clubs")
+    card_3 = Card.new("5", "Diamonds")
+    card_4 = Card.new("Ace", "Spades")
+    card_5 = Card.new("Ace", "Diamonds")
+    deck = Deck.new([card_1, card_2, card_3, card_4, card_5])
+    sorted = deck.sort_by_suit
+    assert_equal card_1.suit, sorted[0].suit
+    assert_equal card_2.suit, sorted[1].suit
+    assert_equal card_3.suit, sorted[2].suit
+    assert_equal card_5.suit, sorted[3].suit
+    assert_equal card_4.suit, sorted[4].suit
   end
 
-  def test_sort_works
+  def test_sorts_deck_by_suit_and_value
     card_1 = Card.new("4","Hearts")
     card_2 = Card.new("Jack", "Clubs")
     card_3 = Card.new("5", "Diamonds")
