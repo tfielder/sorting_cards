@@ -59,8 +59,24 @@ class DeckClassTest < Minitest::Test
     #assert_equal "5", "Diamonds", new_deck[2].value
   end
 
-  def test_sort_works
+  def test_iterate_by_value
+    card_1 = Card.new("4","Hearts")
+    card_2 = Card.new("Jack", "Clubs")
+    card_3 = Card.new("5", "Diamonds")
+    card_4 = Card.new("Ace", "Spades")
+    card_5 = Card.new("Ace", "Diamonds")
+    deck = Deck.new([card_1, card_2, card_3, card_4, card_5])
+    deck.change_deck_to_numerical_values
+    deck.iterate_by_value
+    assert_equal 1, 1 #fix me
+  end
 
+  def test_iterate_by_suit
+    skip
+  end
+
+  def test_sort_works
+    skip
     card_1 = Card.new("4","Hearts")
     card_2 = Card.new("Jack", "Clubs")
     card_3 = Card.new("5", "Diamonds")
