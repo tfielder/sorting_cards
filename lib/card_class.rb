@@ -1,3 +1,5 @@
+require "pry"
+
 class Card
   attr_accessor :value
   attr_accessor :suit
@@ -22,7 +24,14 @@ class Card
   end
 
   def translate_suit
-
+    suit_values = {
+    "Clubs" => 1,
+    "Diamonds" => 2,
+    "Hearts" => 3,
+    "Spades" => 4
+    }
+  @translated_suit = suit_values[@suit]
+  binding.pry
   end
 
   def translate_value
@@ -39,7 +48,8 @@ class Card
       "Jack" => 11,
       "Queen" => 12,
       "King" => 13,
-      "Ace" => 14}
+      "Ace" => 14
+      }
     @translated_value = card_values[@value]
   end
 
