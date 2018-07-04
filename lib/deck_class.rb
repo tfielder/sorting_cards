@@ -18,38 +18,38 @@ def count
   @cards.count
 end
 
-def iterate_by_value
-  @cards.map! do |card, suit|
-
-      binding.pry
-
-    #if card[1] < (@cards[index + 1][1])
-      #puts card.value " is the card value"
-      # puts "and the indexed value is @cards[index + 1].value"
-      # card_holder = @cards[index]
-      # @cards[index] = @cards[index + 1]
-      # @cards[index + 1] = card_holder
-      # @changed = true
-      end
-  return @cards
-end
+# def iterate_by_value
+#   @cards.map! do |card, suit|
+#
+#       binding.pry
+#
+#     #if card[1] < (@cards[index + 1][1])
+#       #puts card.value " is the card value"
+#       # puts "and the indexed value is @cards[index + 1].value"
+#       # card_holder = @cards[index]
+#       # @cards[index] = @cards[index + 1]
+#       # @cards[index + 1] = card_holder
+#       # @changed = true
+#       end
+#   return @cards
+# end
 
 def sort
 
     sorted_array = []
     #sort the deck by value for each card
-
-    #changed = false
-    #until changed == false
-
-      #compare value of card before to card
-        #insert if value is less than value at index.
-
-      #return index of card unless nil
-      #if changed == true
-    #end
-    #sort the deck by suit
-    #return the deck in an array
+    #while deck.count > changed
+    changed = 0
+    @cards.map! do |card, index|
+        if card.translated_value < @cards[index + 1].translated_value
+        card_holder = card
+        @cards[index] = @cards[index + 1]
+        @cards[index + 1] = card_holder
+        changed += 1
+        binding.pry
+        end
+    end
+    return @cards
 end
 
 end
