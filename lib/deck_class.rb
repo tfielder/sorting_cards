@@ -10,34 +10,11 @@ def initialize(array_of_cards)
   @cards = array_of_cards
 end
 
-def cards
-  @cards
-end
-
 def count
   @cards.count
 end
 
-# def iterate_by_value
-#   @cards.map! do |card, suit|
-#
-#       binding.pry
-#
-#     #if card[1] < (@cards[index + 1][1])
-#       #puts card.value " is the card value"
-#       # puts "and the indexed value is @cards[index + 1].value"
-#       # card_holder = @cards[index]
-#       # @cards[index] = @cards[index + 1]
-#       # @cards[index + 1] = card_holder
-#       # @changed = true
-#       end
-#   return @cards
-# end
-
 def sort
-
-    sorted_array = []
-    #sort the deck by value for each card
     #while deck.count > changed
     changed = 0
     @cards.map! do |card, index|
