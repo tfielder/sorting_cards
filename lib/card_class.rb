@@ -9,18 +9,8 @@ class Card
   def initialize(value, suit)
     @value = value
     @suit = suit
-    @translated_suit
-    @translated_value
     translate_suit
     translate_value
-  end
-
-  def suit
-    @suit
-  end
-
-  def value
-    @value
   end
 
   def translate_suit
