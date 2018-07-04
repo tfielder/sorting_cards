@@ -49,7 +49,7 @@ class DeckClassTest < Minitest::Test
   end
 
   def test_sort_works
-    skip
+    
     card_1 = Card.new("4","Hearts")
     card_2 = Card.new("Jack", "Clubs")
     card_3 = Card.new("5", "Diamonds")
