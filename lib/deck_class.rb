@@ -18,47 +18,9 @@ def count
   @cards.count
 end
 
-def change_deck_to_numerical_values
-  #mutates the deck of cards to numerical values
-  card_values = {
-    "2" => 2,
-    "3" => 3,
-    "4" => 4,
-    "5" => 5,
-    "6" => 6,
-    "7" => 7,
-    "8" => 8,
-    "9" => 9,
-    "10" => 10,
-    "Jack" => 11,
-    "Queen" => 12,
-    "King" => 13,
-    "Ace" => 14
-  }
-
-    suit_values = {
-    "Clubs" => 1,
-    "Diamonds" => 2,
-    "Hearts" => 3,
-    "Spades" => 4
-  }
-
-  @cards.map! do |card|
-    translated_value = card_values[card.value]
-    translated_suit = suit_values[card.suit]
-    card = [translated_value, translated_suit]
-  end
-  return @cards
-
-end
-
-def change_deck_to_face_values
-  #undoes the change_deck_to_numerical_values
-end
-
 def iterate_by_value
   @cards.map! do |card, suit|
-    
+
       binding.pry
 
     #if card[1] < (@cards[index + 1][1])
@@ -72,31 +34,7 @@ def iterate_by_value
   return @cards
 end
 
-
 def sort
-    #define values
-    card_values = {
-      "2" => 2,
-      "3" => 3,
-      "4" => 4,
-      "5" => 5,
-      "6" => 6,
-      "7" => 7,
-      "8" => 8,
-      "9" => 9,
-      "10" => 10,
-      "Jack" => 11,
-      "Queen" => 12,
-      "King" => 13,
-      "Ace" => 14
-    }
-
-      suit_values = {
-      "Clubs" => 1,
-      "Diamonds" => 2,
-      "Hearts" => 3,
-      "Spades" => 4
-    }
 
     sorted_array = []
     #sort the deck by value for each card

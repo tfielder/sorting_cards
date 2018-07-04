@@ -31,34 +31,6 @@ class DeckClassTest < Minitest::Test
     assert_equal 3, deck_example.count
   end
 
-  def test_change_deck_to_numerical_values
-
-    card_1 = Card.new("3","Hearts")
-    card_2 = Card.new("4", "Clubs")
-    card_3 = Card.new("5", "Diamonds")
-    deck_example = Deck.new([card_1, card_2, card_3])
-    deck_example.change_deck_to_numerical_values
-    #actual = deck_example.cards[0].value
-    #binding.pry
-    #assert_equal card_1.value.to_i, actual
-    #check to see if string or integer
-    assert_equal card_1.value, deck_example.cards[0].value
-    assert_equal card_2.value, deck_example.cards[1].value
-    assert_equal card_3.value, deck_example.cards[2].value
-  end
-
-  def test_change_deck_to_face_values
-
-    card_1 = [3,3]
-    card_2 = [4,1]
-    card_3 = [5,2]
-    deck_example = Deck.new([card_1, card_2, card_3])
-    deck_example.change_deck_to_face_values
-    assert_equal "3", deck_example.cards[0]
-    #assert_equal "4", "Clubs", new_deck[1].value
-    #assert_equal "5", "Diamonds", new_deck[2].value
-  end
-
   def test_iterate_by_value
     skip
     card_1 = Card.new("4","Hearts")
