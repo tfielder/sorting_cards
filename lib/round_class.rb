@@ -18,14 +18,6 @@ class Round
     @number_correct = 0
   end
 
-  def deck
-    @deck
-  end
-
-  def guesses
-    @guesses
-  end
-
   def current_card
     @deck.cards[@current_card]
   end
@@ -34,7 +26,8 @@ class Round
     guess_card = Card.new(guess["value"], guess["suit"])
     guesstimation = Guess.new("#{guess_card.value} of #{guess_card.suit}", guess_card)
     @guesses.unshift(guesstimation)
-    guesstimation
+    #binding.pry
+    return guesstimation
   end
 
   def first
