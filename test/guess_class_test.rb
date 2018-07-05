@@ -12,42 +12,31 @@ class GuessClassTest < Minitest::Test
     assert_instance_of Guess, guess_example
   end
 
-  def test_returns_response
+  def test_returns_guess_response
     card_example = Card.new("Queen","Clubs")
     response = "Queen of Clubs"
     guess_example = Guess.new(response, card_example)
     assert_equal "Queen of Clubs", guess_example.response
   end
 
-  def test_returns_card
+  def test_returns_guess_card
     card_example = Card.new("Queen","Clubs")
     response = "Queen of Clubs"
     guess_example = Guess.new(response, card_example)
     assert_equal card_example, guess_example.card
   end
 
-  def test_correct?
-    card_example = Card.new("Queen","Clubs")
-    response = "Queen of Clubs"
-    guess_example = Guess.new(response, card_example)
+  def test_method_for_returning_boolean_correct?
+    guess_example = Guess.new("10 of Hearts", Card.new("10", "Hearts"))
     assert_equal true, guess_example.correct?
-
-    card_example = Card.new("Queen","you")
-    response = "Queen of Clubs"
-    guess_example = Guess.new(response, card_example)
+    guess_example = Guess.new("10 of Hearts", Card.new("Queen", "Clubs"))
     assert_equal false, guess_example.correct?
   end
 
   def test_feedback
-    card_example = Card.new("Queen","Clubs")
-    response = "Queen of Clubs"
-    guess_example = Guess.new(response, card_example)
+    guess_example = Guess.new("10 of Hearts", Card.new("10", "Hearts"))
     assert_equal "Correct!", guess_example.feedback
-
-    card_example = Card.new("Queen","you")
-    response = "Queen of Clubs"
-    guess_example = Guess.new(response, card_example)
+    guess_example = Guess.new("10 of Hearts", Card.new("Queen", "Clubs"))
     assert_equal "Incorrect!", guess_example.feedback
   end
-
 end

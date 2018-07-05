@@ -8,20 +8,24 @@ class Guess
     @card = card
   end
 
-  def correct?
+  def card_description
     card_description = "#{@card.value} of #{@card.suit}"
-    if card_description == @response
-      return true
-    else
-      return false
-    end
+    return card_description
+  end
+
+  def correct?
+      if card_description == @response
+        return true
+      else
+        return false
+      end
   end
 
   def feedback
-    if correct?
-      "Correct!"
+    if correct? == true
+      return "Correct!"
     else
-      "Incorrect!"
+      return "Incorrect!"
     end
   end
 end
