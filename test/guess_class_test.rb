@@ -27,13 +27,9 @@ class GuessClassTest < Minitest::Test
   end
 
   def test_returns_correct_on_method_correct?
-    card_example = Card.new("10", "Hearts")
-    guess_example = Guess.new("10 of Hearts", card_example)
+    guess_example = Guess.new("10 of Hearts", Card.new("10", "Hearts"))
     assert_equal true, guess_example.correct?
-
-    card_example = Card.new("Queen","you")
-    response = "Queen of Clubs"
-    guess_example = Guess.new(response, card_example)
+    guess_example = Guess.new("10 of Hearts", Card.new("Queen", "Clubs"))
     assert_equal false, guess_example.correct?
   end
 
