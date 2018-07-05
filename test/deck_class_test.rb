@@ -47,6 +47,38 @@ class DeckClassTest < Minitest::Test
     assert_equal 1, deck_example.convert_suit(card_2.suit)
   end
 
+  def test_switches_cards
+    card_1 = Card.new("4","Hearts")
+    card_2 = Card.new("Jack", "Clubs")
+    deck = Deck.new([card_1, card_2])
+    deck.switch_cards(0)
+    assert_equal deck.cards[0].value, card_2.value
+  end
+
+  def test_check_value_equal
+    card_1 = Card.new("4","Hearts")
+    card_2 = Card.new("4", "Diamonds")
+    deck = Deck.new([card_1, card_2])
+    deck.check_value_equal(0, card_1)
+    assert_equal deck.cards[0].value, card_2.value
+  end
+
+  def test_check_suit_greater
+    card_1 = Card.new("4","Hearts")
+    card_2 = Card.new("4", "Diamonds")
+    deck = Deck.new([card_1, card_2])
+    answer = deck.check_suit_greater(0, card_1)
+    assert_equal true, answer
+  end
+
+  def test_card_comparison
+    card_1 = Card.new("4","Hearts")
+    card_2 = Card.new("4", "Diamonds")
+    deck = Deck.new([card_1, card_2])
+    answer = deck.card_comparison(card_1, 0)
+    assert_equal 0, answer
+  end
+
   def test_sorts_deck_by_suit_and_value
     card_1 = Card.new("4","Hearts")
     card_2 = Card.new("Jack", "Clubs")
