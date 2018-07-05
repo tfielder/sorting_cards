@@ -43,19 +43,25 @@ def check_suit_greater(index, card)
   convert_suit(card.suit) > convert_suit(@cards[index + 1].suit)
 end
 
+def card_comparison(card, index)
+  if convert_value(card.value) > convert_value(@cards[index + 1].value)
+      switch_cards(index)
+      return 0
+  elsif check_value_equal(index, card) && check_suit_greater(index, card)
+      switch_cards(index)
+      return 0
+  else
+      return -1
+  end
+end
+
 def sort
   no_change = 1
     while no_change != 0
       no_change = @cards.count - 1
       @cards.each_with_index do |card, index|
         if @cards[index + 1] != nil
-          if convert_value(card.value) > convert_value(@cards[index + 1].value)
-            switch_cards(index)
-          elsif check_value_equal(index, card) && check_suit_greater(index, card)
-              switch_cards(index)
-          else
-              no_change -= 1
-          end
+          no_change += card_comparison(card, index)
         end
       end
     end
