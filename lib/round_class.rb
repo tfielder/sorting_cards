@@ -23,11 +23,9 @@ class Round
   end
 
   def record_guess(guess)
-    guess_card = Card.new(guess["value"], guess["suit"])
-    guesstimation = Guess.new("#{guess_card.value} of #{guess_card.suit}", guess_card)
-    @guesses.unshift(guesstimation)
-    #binding.pry
-    return guesstimation
+    guess_count = @guesses.count
+    created_guess = Guess.new("#{guess["value"]} of #{guess["suit"]}", deck.cards[guess_count])
+    @guesses.unshift(created_guess)
   end
 
   def first
