@@ -31,6 +31,22 @@ class DeckClassTest < Minitest::Test
     assert_equal 3, deck_example.count
   end
 
+  def test_convert_value
+    card_1 = Card.new("4","Hearts")
+    card_2 = Card.new("Jack", "Clubs")
+    deck_example = Deck.new([card_1, card_2])
+    assert_equal 4, deck_example.convert_value(card_1.value)
+    assert_equal 11, deck_example.convert_value(card_2.value)
+  end
+
+  def test_convert_suit
+    card_1 = Card.new("4","Hearts")
+    card_2 = Card.new("Jack", "Clubs")
+    deck_example = Deck.new([card_1, card_2])
+    assert_equal 3, deck_example.convert_suit(card_1.suit)
+    assert_equal 1, deck_example.convert_suit(card_2.suit)
+  end
+
   def test_sort_by_value
     card_1 = Card.new("4","Hearts")
     card_2 = Card.new("Jack", "Clubs")

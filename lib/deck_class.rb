@@ -5,13 +5,29 @@ require "pry"
 class Deck
 
 attr_accessor :cards
+attr_reader :suit_values
 
 def initialize(array_of_cards)
   @cards = array_of_cards
+  @suit_values = {"Clubs" => 1, "Diamonds" => 2, "Hearts" => 3, "Spades" => 4}
+  @card_values = {"Jack" => 11, "Queen" => 12, "King" => 13, "Ace" => 14}
 end
 
 def count
   @cards.count
+end
+
+def convert_value(value)
+  #binding.pry
+  if value.to_i == 0
+    return @card_values[value]
+  else
+    return value.to_i
+  end
+end
+
+def convert_suit(suit)
+    return @suit_values[suit]
 end
 
 def sort_by_value
