@@ -85,7 +85,7 @@ class RoundClassTest < Minitest::Test
     round.record_guess(hash)
     hash2 = {"value" => guess2.card.value, "suit" => guess2.card.suit}
     round.record_guess(hash2)
-    assert_equal "10 of Diamonds", round.guesses[-1].response
+    assert_equal "10 of Diamonds", round.guesses.last.response
   end
 
   def test_for_returning_number_correct
