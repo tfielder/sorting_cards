@@ -26,16 +26,7 @@ class Round
     guess_count = @guesses.count
     created_guess = Guess.new("#{guess[:value]} of #{guess[:suit]}", deck.cards[guess_count])
     @current_card += 1
-    @guesses.unshift(created_guess)
-    binding.pry
-  end
-
-  def first
-    @guesses.index[-1]
-  end
-
-  def last
-    @guesses.index[0]
+    @guesses.push(created_guess)
   end
 
   def number_correct
