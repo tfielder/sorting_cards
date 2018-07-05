@@ -25,7 +25,7 @@ class Guess
     if correct? == true
       return "Correct!"
     else
-      return "Incorrect!"
+      return "Incorrect."
     end
   end
 end
