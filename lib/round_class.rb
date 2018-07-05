@@ -25,6 +25,7 @@ class Round
   def record_guess(guess)
     guess_count = @guesses.count
     created_guess = Guess.new("#{guess["value"]} of #{guess["suit"]}", deck.cards[guess_count])
+    @current_card += 1
     @guesses.unshift(created_guess)
   end
 
