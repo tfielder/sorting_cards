@@ -36,10 +36,9 @@ def sort_by_value
       @cards.each_with_index do |card, index|
         if @cards[index + 1] != nil
           if convert_value(card.value) > convert_value(@cards[index + 1].value)
-            card_holder1 = @cards[index]
-            card_holder2 = @cards[index + 1]
-            @cards[index] = card_holder2
-            @cards[index + 1] = card_holder1
+            card_holder = @cards[index]
+            @cards[index] = @cards[index + 1]
+            @cards[index + 1] = card_holder
           else
             no_change -= 1
           end
@@ -57,10 +56,9 @@ def sort_by_suit
         if @cards[index + 1] != nil
           if convert_value(card.value) == convert_value(@cards[index + 1].value)
             if convert_suit(card.suit) > convert_suit(@cards[index + 1].suit)
-              card_holder1 = @cards[index]
-              card_holder2 = @cards[index + 1]
-              @cards[index] = card_holder2
-              @cards[index + 1] = card_holder1
+              card_holder = @cards[index]
+              @cards[index] = @cards[index + 1]
+              @cards[index + 1] = card_holder
             else
               no_change -= 1
             end
