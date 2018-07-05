@@ -29,41 +29,30 @@ def convert_suit(suit)
     return @suit_values[suit]
 end
 
-def sort_by_value
+def switch_cards(index)
+  card_holder = @cards[index]
+  @cards[index] = @cards[index + 1]
+  @cards[index + 1] = card_holder
+end
+
+def check_value_equal(index, card)
+  convert_value(card.value) == convert_value(@cards[index + 1].value)
+end
+
+def check_suit_greater(index, card)
+  convert_suit(card.suit) > convert_suit(@cards[index + 1].suit)
+end
+
+def sort
   no_change = 1
     while no_change != 0
       no_change = @cards.count - 1
       @cards.each_with_index do |card, index|
         if @cards[index + 1] != nil
           if convert_value(card.value) > convert_value(@cards[index + 1].value)
-            card_holder1 = @cards[index]
-            card_holder2 = @cards[index + 1]
-            @cards[index] = card_holder2
-            @cards[index + 1] = card_holder1
-          else
-            no_change -= 1
-          end
-        end
-      end
-    end
-    return @cards
-end
-
-def sort_by_suit
-  no_change = 1
-    while no_change != 0
-      no_change = @cards.count - 1
-      @cards.each_with_index do |card, index|
-        if @cards[index + 1] != nil
-          if convert_value(card.value) == convert_value(@cards[index + 1].value)
-            if convert_suit(card.suit) > convert_suit(@cards[index + 1].suit)
-              card_holder1 = @cards[index]
-              card_holder2 = @cards[index + 1]
-              @cards[index] = card_holder2
-              @cards[index + 1] = card_holder1
-            else
-              no_change -= 1
-            end
+            switch_cards(index)
+          elsif check_value_equal(index, card) && check_suit_greater(index, card)
+              switch_cards(index)
           else
               no_change -= 1
           end
@@ -71,12 +60,6 @@ def sort_by_suit
       end
     end
     return @cards
-end
-
-def sort
-  sort_by_value
-  sort_by_suit
-  return @cards
 end
 
 end
