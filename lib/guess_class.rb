@@ -14,11 +14,15 @@ class Guess
   end
 
   def correct?
-    card_description == @response
+      if card_description == @response
+        return true
+      else
+        return false
+      end
   end
 
   def feedback
-    if correct?
+    if correct? == true
       return "Correct!"
     else
       return "Incorrect!"
